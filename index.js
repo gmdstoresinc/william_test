@@ -6,7 +6,8 @@ const app = express();
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-  res.send('Successful response.');
+  // res.send('Successful response.');
+  throw new Error('Kill app');
 });
 
 app.post('/kill', (req, res) => {
