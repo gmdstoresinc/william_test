@@ -9,6 +9,11 @@ app.get('/', (req, res) => {
   res.send('Successful response.');
 });
 
+app.post('/kill', (req, res) => {
+  console.log('Kill server ');
+  throw new Error('Kill app');
+});
+
 app.use('/calculator', (req, res) => {
   console.log('Request type: ', req.method);
   console.log('Request body: ', req.body);
